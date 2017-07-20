@@ -25,6 +25,7 @@ export default ({ title, content, type, cover, readCount, commentCount, goToUrl,
       margin: 16px 0;
       box-shadow: 0 1px 3px rgba(46,61,73,.08);
       border: 1px solid #dbe2e8;
+      border-width: 1px 0 1px 0;
     }
 
     .cover {

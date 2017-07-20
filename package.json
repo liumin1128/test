@@ -8,6 +8,7 @@
     "next": "^3.0.1-beta.17",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-waypoint": "^7.0.4",
     "styled-jsx": "^1.0.8"
   }
 }
