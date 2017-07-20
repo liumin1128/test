@@ -1,4 +1,6 @@
-export default ({ title, content, type, cover, readCount, commentCount, goToUrl, id }) => <div className="item" >
+import Link from 'next/link'
+
+export default ({ title, content, type, cover, readCount, commentCount, goToUrl, id }) => <Link href={"/news/detail?id="+id}><div className="item" >
   <img className="cover" src={cover} alt=""/>
   <div className="box">
     <h3 className="title">{title}</h3>
@@ -91,4 +93,4 @@ export default ({ title, content, type, cover, readCount, commentCount, goToUrl,
     }
 
   `}</style>
-</div>
+</div></Link>

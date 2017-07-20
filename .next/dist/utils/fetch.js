@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.request = undefined;
 
@@ -13,32 +13,36 @@ var _stringify = require('_babel-runtime@6.23.0@babel-runtime/core-js/json/strin
 
 var _stringify2 = _interopRequireDefault(_stringify);
 
-var _isomorphicFetch = require('isomorphic-fetch');
+require('isomorphic-fetch');
 
-var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
+var _es6Promise = require('es6-promise');
+
+var _es6Promise2 = _interopRequireDefault(_es6Promise);
 
 var _api = require('../constants/api.js');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var request = exports.request = function request(url) {
-  var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+_es6Promise2.default.polyfill();
 
-  console.log('访问：' + _api.APIURL + url);
-  var options = {
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    },
-    method: 'POST',
-    body: (0, _stringify2.default)((0, _extends3.default)({}, params))
-  };
-  return (0, _isomorphicFetch2.default)(_api.APIURL + url, options).then(function (response) {
-    if (response.status >= 400) {
-      throw new Error("Bad response from server");
-    }
-    return response.json();
-  }).catch(function (err) {
-    return { err: err };
-  });
+var request = exports.request = function request(url) {
+    var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    console.log('访问：' + _api.APIURL + url);
+    var options = {
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: (0, _stringify2.default)((0, _extends3.default)({}, params))
+    };
+    return fetch(_api.APIURL + url, options).then(function (response) {
+        if (response.status >= 400) {
+            throw new Error("Bad response from server");
+        }
+        return response.json();
+    }).catch(function (err) {
+        return { err: err };
+    });
 };

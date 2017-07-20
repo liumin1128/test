@@ -1,6 +1,11 @@
-import fetch from 'isomorphic-fetch'
+import 'isomorphic-fetch'
+import es6promise from 'es6-promise'
+
 import { APIURL } from '../constants/api.js'
- 
+
+es6promise.polyfill()
+
+
 export const request = (url, params = {}) => {
     console.log('访问：'+APIURL + url)
     const options = {

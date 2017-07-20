@@ -5,6 +5,7 @@ import Waypoint from 'react-waypoint';
 import { request } from '../utils/fetch.js'
 import { GET_NEWS } from '../constants/api.js'
 import { formatNewsList } from '../utils/format.js'
+import { withReduxSaga } from '../store'
 
 import Head from '../components/Head'
 import NewsItem from '../components/NewsItem'
@@ -29,6 +30,10 @@ class Index extends Component {
         list: this.state.list.concat(formatNewsList(list))
       })
     }
+  }
+  componentDidMount () {
+    console.log(this.props)
+    this.props.dispatch({ type: 'test' })
   }
   render(){
     const { list = [] } = this.props
@@ -55,9 +60,9 @@ class Index extends Component {
   }
 }
 
-let list = []
+export let list = []
 
-Index.getInitialProps = async ({ req }) => {
+Index.getInitialProps = async ({ req, store }) => {
   if (list.length === 0) {
     const data = await request(GET_NEWS)
     list = data.body.result
@@ -69,4 +74,4 @@ Index.getInitialProps = async ({ req }) => {
 //   const json = await res.json()
 }
 
-export default Index
+export default withReduxSaga(Index)

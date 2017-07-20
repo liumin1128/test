@@ -2,7 +2,6 @@ import { preatyTime, getStrless } from './common';
 
 export const formatNewsList = (data) => {
   return data.map((i, index) => {
-    console.log(i.photos)
     return {
       ...i,
       key: i.id || index,
@@ -11,7 +10,6 @@ export const formatNewsList = (data) => {
       type: i.newsType ? i.newsType.typeName : undefined,
       cover: i.photos ? i.photos[0] : undefined,
       content: getStrless(i.content, 60, 3),
-      // type: getNewsTypes()[i.type].text || undefined,
     };
   });
 };

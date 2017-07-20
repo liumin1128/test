@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.list = undefined;
 
 var _extends2 = require('_babel-runtime@6.23.0@babel-runtime/helpers/extends');
 
@@ -54,6 +55,8 @@ var _api = require('../constants/api.js');
 
 var _format = require('../utils/format.js');
 
+var _store = require('../store');
+
 var _Head = require('../components/Head');
 
 var _Head2 = _interopRequireDefault(_Head);
@@ -103,7 +106,7 @@ var Index = function (_Component) {
             case 4:
               data = _context.sent;
 
-              list = data.body.result;
+              exports.list = list = data.body.result;
               _this.setState({
                 list: _this.state.list.concat((0, _format.formatNewsList)(list))
               });
@@ -119,6 +122,12 @@ var Index = function (_Component) {
   }
 
   (0, _createClass3.default)(Index, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log(this.props);
+      this.props.dispatch({ type: 'test' });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props$list = this.props.list,
@@ -129,28 +138,28 @@ var Index = function (_Component) {
       return _react2.default.createElement('div', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 41
         }
       }, _react2.default.createElement(_Head2.default, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 42
         }
       }), _react2.default.createElement(_layout.Container, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 43
         }
       }, _react2.default.createElement(_layout.Main, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 44
         }
       }, list.concat(more).map(function (i) {
         return _react2.default.createElement(_NewsItem2.default, (0, _extends3.default)({}, i, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 41
+            lineNumber: 46
           }
         }));
       }), _react2.default.createElement(_reactWaypoint2.default, {
@@ -160,22 +169,22 @@ var Index = function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 48
         }
       }, _react2.default.createElement('span', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 54
         }
       }, _react2.default.createElement(_Loading2.default, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 54
         }
       })))), _react2.default.createElement(_layout.Sider, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 57
         }
       }, 'sider')));
     }
@@ -184,11 +193,12 @@ var Index = function (_Component) {
   return Index;
 }(_react.Component);
 
-var list = [];
+var list = exports.list = [];
 
 Index.getInitialProps = function () {
   var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(_ref2) {
-    var req = _ref2.req;
+    var req = _ref2.req,
+        store = _ref2.store;
     var data;
     return _regenerator2.default.wrap(function _callee2$(_context2) {
       while (1) {
@@ -205,7 +215,7 @@ Index.getInitialProps = function () {
           case 3:
             data = _context2.sent;
 
-            list = data.body.result;
+            exports.list = list = data.body.result;
             console.log('list不存在');
             _context2.next = 9;
             break;
@@ -231,4 +241,4 @@ Index.getInitialProps = function () {
   };
 }();
 
-exports.default = Index;
+exports.default = (0, _store.withReduxSaga)(Index);

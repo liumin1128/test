@@ -5,10 +5,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "es6-promise": "^4.1.1",
+    "isomorphic-fetch": "^2.2.1",
     "next": "^3.0.1-beta.17",
+    "next-redux-saga": "^1.0.1",
+    "next-redux-wrapper": "^1.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
     "react-waypoint": "^7.0.4",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.15.4",
     "styled-jsx": "^1.0.8"
+  },
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.2"
   }
 }

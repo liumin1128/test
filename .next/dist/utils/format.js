@@ -15,7 +15,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var formatNewsList = exports.formatNewsList = function formatNewsList(data) {
   return data.map(function (i, index) {
-    console.log(i.photos);
     return (0, _extends3.default)({}, i, {
       key: i.id || index,
       createdAt: (0, _common.preatyTime)(i.createdAt) || undefined,
@@ -23,7 +22,6 @@ var formatNewsList = exports.formatNewsList = function formatNewsList(data) {
       type: i.newsType ? i.newsType.typeName : undefined,
       cover: i.photos ? i.photos[0] : undefined,
       content: (0, _common.getStrless)(i.content, 60, 3)
-      // type: getNewsTypes()[i.type].text || undefined,
     });
   });
 };
