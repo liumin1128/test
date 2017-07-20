@@ -1,77 +1,25 @@
 import React, { Component } from 'react'
-import Link from 'next/link'
-import Waypoint from 'react-waypoint';
 
-import { request } from '../utils/fetch.js'
-import { GET_NEWS } from '../constants/api.js'
-import { formatNewsList } from '../utils/format.js'
 import { withReduxSaga } from '../store'
 
 import Head from '../components/Head'
-import NewsItem from '../components/NewsItem'
-import Loading from '../components/Loading'
+import NewsList from '../components/News/List'
 import { Container, Main, Sider } from '../components/layout'
 
-class Index extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      title: 'xxx',
-      list: []
-    }
-    this.loadMore = async () => {
-      const length = this.props.list.length + this.state.list.length
-      const params = {
-        page: (length / 20) + 1,
-      }
-      const data = await request(GET_NEWS, params)
-      list = data.body.result
-      this.setState({
-        list: this.state.list.concat(formatNewsList(list))
-      })
-    }
-  }
-  componentDidMount () {
-    console.log(this.props)
-    this.props.dispatch({ type: 'test' })
-  }
-  render(){
-    const { list = [] } = this.props
-    const { list: more = [] } = this.state
-    return (<div>
+const Index = () => <div>
     <Head />
     <Container>
       <Main>
-        {
-          list.concat(more).map(i => <NewsItem {...i} />)
-        }
-        <Waypoint
-          onEnter={this.loadMore}
-          onLeave={() => {
-            console.log('onLeave');
-          }}
-        >
-          <span><Loading /></span>
-        </Waypoint>
+        <NewsList />
       </Main>
       <Sider>sider</Sider>
     </Container>
-</div>)
-  }
-}
-
-export let list = []
+</div>
 
 Index.getInitialProps = async ({ req, store }) => {
-  if (list.length === 0) {
-    const data = await request(GET_NEWS)
-    list = data.body.result
-    console.log('list不存在')
-  } else {
-    console.log('list已存在')
-  }
-  return { list: formatNewsList(list) }
-//   const json = await res.json()
+  store.dispatch({
+    type: 'news/init'
+  })
 }
 
 export default withReduxSaga(Index)

@@ -5,8 +5,7 @@ import { APIURL } from '../constants/api.js'
 
 es6promise.polyfill()
 
-
-export const request = (url, params = {}) => {
+export default (url, params = {}) => {
     console.log('访问：'+APIURL + url)
     const options = {
         headers: {

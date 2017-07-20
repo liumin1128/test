@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.request = undefined;
 
 var _extends2 = require('_babel-runtime@6.23.0@babel-runtime/helpers/extends');
 
@@ -25,7 +24,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _es6Promise2.default.polyfill();
 
-var request = exports.request = function request(url) {
+exports.default = function (url) {
     var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
     console.log('访问：' + _api.APIURL + url);
