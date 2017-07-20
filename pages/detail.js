@@ -17,6 +17,9 @@ const Index = () => <div>
 </div>
 
 Index.getInitialProps = async ({ query, store }) => {
+  // if(typeof(window) === 'function') {
+  //   window.scrollTop(0)
+  // }
   store.dispatch({
     type: 'news/getDetail',
     payload: query

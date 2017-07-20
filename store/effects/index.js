@@ -44,8 +44,10 @@ function* getNewsDetail({ payload }) {
       console.log('detail联网才被找到')
       const data = yield call(request, GET_NEWS, payload);
       detail = data.body.result[0]
+    } else {
+      // window.scrollTo(0, 0);
+      console.log('detail在列表中被找到')
     }
-    console.log('detail在列表中被找到')
     yield put({ type: 'news/save', payload: { detail } });
   }
 }
