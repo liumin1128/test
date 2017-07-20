@@ -1,34 +1,25 @@
 import React from 'react'
-import Head from 'next/head'
 import Link from 'next/link'
+
 import { request } from '../utils/fetch.js'
 import { GET_NEWS } from '../constants/api.js'
+import { formatNewsList } from '../utils/format.js'
 
+import Head from '../components/Head'
 import NewsItem from '../components/NewsItem'
+import { Container, Main, Sider } from '../components/layout'
 
 const Page = ({ list = [] }) => <div>
-    <Head>
-      <title>News</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <nav>
-    <ul>
-      <li><Link prefetch href='/'><a>Home</a></Link></li>
-      <li><Link prefetch href='/about'><a>About</a></Link></li>
-      <li><Link prefetch href='/contact'><a>Contact</a></Link></li>
-    </ul>
-  </nav>
-    {
-      list.map(({
-        id,
-        title,
-        photos
-      }) => <NewsItem
-        key={id}
-        title={title}
-        photos={photos}
-      />)
-    }
+    <Head />
+    <Container>
+      <Main>
+        {
+          list.map(i => <NewsItem {...i} />)
+        }
+      </Main>
+      <Sider>sider</Sider>
+    </Container>
+
 </div>
 
 let list = []
@@ -41,7 +32,7 @@ Page.getInitialProps = async ({ req }) => {
   } else {
     console.log('list已存在')
   }
-  return { list }
+  return { list: formatNewsList(list) }
 //   const json = await res.json()
 }
 

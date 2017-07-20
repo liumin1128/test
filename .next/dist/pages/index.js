@@ -12,13 +12,13 @@ var _asyncToGenerator2 = require('_babel-runtime@6.23.0@babel-runtime/helpers/as
 
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
+var _extends2 = require('_babel-runtime@6.23.0@babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
-
-var _head = require('_next@3.0.1-beta.17@next/dist/lib/head.js');
-
-var _head2 = _interopRequireDefault(_head);
 
 var _link = require('_next@3.0.1-beta.17@next/dist/lib/link.js');
 
@@ -28,9 +28,17 @@ var _fetch = require('../utils/fetch.js');
 
 var _api = require('../constants/api.js');
 
+var _format = require('../utils/format.js');
+
+var _Head = require('../components/Head');
+
+var _Head2 = _interopRequireDefault(_Head);
+
 var _NewsItem = require('../components/NewsItem');
 
 var _NewsItem2 = _interopRequireDefault(_NewsItem);
+
+var _layout = require('../components/layout');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43,95 +51,43 @@ var Page = function Page(_ref) {
   return _react2.default.createElement('div', {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
-    }
-  }, _react2.default.createElement(_head2.default, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    }
-  }, _react2.default.createElement('title', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    }
-  }, 'News'), _react2.default.createElement('meta', { name: 'viewport', content: 'initial-scale=1.0, width=device-width', __source: {
-      fileName: _jsxFileName,
       lineNumber: 12
     }
-  })), _react2.default.createElement('nav', {
+  }, _react2.default.createElement(_Head2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    }
+  }), _react2.default.createElement(_layout.Container, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
     }
-  }, _react2.default.createElement('ul', {
+  }, _react2.default.createElement(_layout.Main, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     }
-  }, _react2.default.createElement('li', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    }
-  }, _react2.default.createElement(_link2.default, { prefetch: true, href: '/', __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    }
-  }, _react2.default.createElement('a', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    }
-  }, 'Home'))), _react2.default.createElement('li', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    }
-  }, _react2.default.createElement(_link2.default, { prefetch: true, href: '/about', __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    }
-  }, _react2.default.createElement('a', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    }
-  }, 'About'))), _react2.default.createElement('li', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    }
-  }, _react2.default.createElement(_link2.default, { prefetch: true, href: '/contact', __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    }
-  }, _react2.default.createElement('a', {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    }
-  }, 'Contact'))))), list.map(function (_ref2) {
-    var id = _ref2.id,
-        title = _ref2.title,
-        photos = _ref2.photos;
-    return _react2.default.createElement(_NewsItem2.default, {
-      key: id,
-      title: title,
-      photos: photos,
+  }, list.map(function (i) {
+    return _react2.default.createElement(_NewsItem2.default, (0, _extends3.default)({}, i, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 17
       }
-    });
-  }));
+    }));
+  })), _react2.default.createElement(_layout.Sider, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    }
+  }, 'sider')));
 };
 
 var list = [];
 
 Page.getInitialProps = function () {
-  var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(_ref3) {
-    var req = _ref3.req;
+  var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(_ref2) {
+    var req = _ref2.req;
     var data;
     return _regenerator2.default.wrap(function _callee$(_context) {
       while (1) {
@@ -157,7 +113,7 @@ Page.getInitialProps = function () {
             console.log('list已存在');
 
           case 9:
-            return _context.abrupt('return', { list: list
+            return _context.abrupt('return', { list: (0, _format.formatNewsList)(list)
               //   const json = await res.json()
             });
 
@@ -170,7 +126,7 @@ Page.getInitialProps = function () {
   }));
 
   return function (_x) {
-    return _ref4.apply(this, arguments);
+    return _ref3.apply(this, arguments);
   };
 }();
 
