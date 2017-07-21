@@ -6,6 +6,8 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
 const handle = app.getRequestHandler();
 
+const port = dev ? 8000 : 3000;
+
 // This is where we cache our rendered HTML pages
 const ssrCache = new LRUCache({
   max: 100,
@@ -31,9 +33,9 @@ app.prepare()
     return handle(req, res);
   });
 
-  server.listen(8000, (err) => {
+  server.listen(port, (err) => {
     if (err) throw err;
-    console.log('> Ready on http://localhost:8000');
+    console.log(`> Ready on http://localhost:${port}`);
   });
 });
 

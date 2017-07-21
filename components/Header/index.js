@@ -17,6 +17,9 @@ class Header extends Component {
   render() {
     const { theme } = this.state;
     return (<Headroom
+      style={{
+        height: 60,
+      }}
       onUnpin={() => {
         this.setState({
           theme: 'white',

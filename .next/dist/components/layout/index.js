@@ -30,7 +30,44 @@ var _Header2 = _interopRequireDefault(_Header);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var _jsxFileName = '/Users/liumin/Desktop/Git/ssr/components/Layout/index.js';
+
 exports.default = function (_ref) {
   var children = _ref.children;
-  return _react2.default.createElement('div', null, _react2.default.createElement(_Head2.default, null), _react2.default.createElement(_Header2.default, null), _react2.default.createElement(_Container2.default, null, _react2.default.createElement(_Main2.default, null, children), _react2.default.createElement(_Sider2.default, null, _react2.default.createElement('h1', null, 'Sider'))));
+  return _react2.default.createElement('div', {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    }
+  }, _react2.default.createElement(_Head2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    }
+  }), _react2.default.createElement(_Header2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    }
+  }), _react2.default.createElement(_Container2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    }
+  }, _react2.default.createElement(_Main2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    }
+  }, children), _react2.default.createElement(_Sider2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    }
+  }, _react2.default.createElement('h1', {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    }
+  }, 'Sider'))));
 };
