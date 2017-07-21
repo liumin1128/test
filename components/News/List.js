@@ -16,7 +16,6 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps)(({list, dispatch}) => {
   function gotodetail(id) {
-    console.log(id)
     dispatch({
       type: 'news/getDetail',
       payload: {

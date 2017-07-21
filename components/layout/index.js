@@ -1,7 +1,9 @@
+import Header from '../Header'
+
 export const Container = ({ children }) => (
   <div>
     <div className="header">
-      <h1>header</h1>
+      <Header />
     </div>
     <div className="container">
       <div className="row">
