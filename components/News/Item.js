@@ -6,7 +6,7 @@ export default ({ title, content, type, cover, readCount, commentCount }) => (<d
     <h3 className="title">{title}</h3>
     <summary className="desc">{content}</summary>
     <footer className="meta">
-      <div className="source">{type}</div>
+      <div className="source">来自 {type}</div>
       <span />
       <div className="actions">
         <span className="like">

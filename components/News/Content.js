@@ -36,7 +36,7 @@ export default ({
     margin-right: 5px;
   }
   .content p {
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
     line-height: 26px;
     display: block;
     color: #4a4a4a;
@@ -46,6 +46,14 @@ export default ({
   }
   .content img {
     margin-bottom: 20px;
+  }
+  .content p img {
+    margin-bottom: 0px;
+  }
+  @media (min-width: 768px){
+    .box {
+      padding-top: 0px;
+    }
   }
   `}</style>
 </div>);

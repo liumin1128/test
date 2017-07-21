@@ -6,7 +6,6 @@ export default () => (<div className="loading">
   <style global jsx>{`
     .loading {
       padding: 16px;
-      background: red;
       display: flex;
       justify-content: center;
       align-items: center;

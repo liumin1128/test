@@ -57,7 +57,7 @@ class Header extends Component {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 0 16px;
+          padding: 0 12px;
         }
         .logo {
           height: 60px;

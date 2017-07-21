@@ -17,13 +17,13 @@ export default ({
     <style>{`
         body {
           background-color: #fafbfc;
-          font-weight: 400;
-          -webkit-font-smoothing: antialiased;
         }
 
         a,body {
           color: #292525;
           font-size: 16px;
+          font-weight: 400;
+          -webkit-font-smoothing: antialiased;
         }
 
 

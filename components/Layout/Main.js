@@ -10,6 +10,11 @@ export default ({ children }) => (
       }
       @media (min-width: 1110px){
         .main{
+          box-sizing: border-box;
+        }
+      }
+      @media (min-width: 1110px){
+        .main{
           margin: 0 50px 0 0;
         }
       }
