@@ -89,24 +89,27 @@ class Menu extends Component {
       </Modal>
       <style jsx>{`
         .classbox {
-          padding: 10%;
+          padding: 5%;
           padding-bottom: 0;
-
         }
         .classbox h3 {
           font-size: 24px;
           font-weight: 100;
           color: #999;
-          padding: 32px 0 64px;
+          padding: 16px 0 32px;
+          font-size: 12px;
         }
         .classbox .items {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
+          width: 100%;
+          // display: flex;
+          // flex-wrap: wrap;
+          // justify-content: space-around;
 
         }
         .classbox span {
+          display: inline-block;
           width: 75px;
+          width: 33.3%;
           text-align: center;
           color: #292525;
           margin-bottom: 24px;
