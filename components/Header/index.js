@@ -14,6 +14,8 @@ class Header extends Component {
       console.log(document.referrer);
     };
   }
+  componentDidMount() {
+  }
   render() {
     const { theme } = this.state;
     return (<Headroom
