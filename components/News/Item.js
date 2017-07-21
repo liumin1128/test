@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default ({ title, content, type, cover, readCount, commentCount }) => (<div className="item" >
-  <img className="cover" src={cover} alt="" />
+  <div className="cover" style={{ backgroundImage: `url(${cover})` }} />
   <div className="box">
     <h3 className="title">{title}</h3>
     <summary className="desc">{content}</summary>
@@ -35,7 +35,7 @@ export default ({ title, content, type, cover, readCount, commentCount }) => (<d
       height: 240px;
       background-position: 50% 50%;
       background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background-size: 100% auto;
     }
     .box {
       padding: 20px;
@@ -76,9 +76,11 @@ export default ({ title, content, type, cover, readCount, commentCount }) => (<d
       margin-right: 4px;
     }
 
-    @media (min-width: 78rem) {
+    @media (min-width: 768px) {
       .item {
         border-radius: 3px;
+        overflow: hidden;
+        border-width: 1px;
       }
       .title {
         font-size: 24px;

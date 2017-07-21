@@ -5,42 +5,22 @@ export default ({ children }) => (
     <div className="row">
       {children}
     </div>
-    <style global jsx>{`
-    .container {
-      margin: 0 auto;
-    }
 
-    @media (min-width: 48rem){
+    <style jsx>{`
       .container {
-        max-width: 1500px;
-      }
-      .row {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
+        margin: 0 auto;
+        max-width: 1100px;
       }
       .row div {
         position: relative;
       }
-    }
-
-    @media (min-width: 78rem) {
-      .container {
-        max-width: 2400px;
-        display: flex;
-        flex-direction: row;
+      @media (min-width: 1110px){
+        .row {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+        }
       }
-      .row {
-        flex-direction: row;
-      }
-      .main {
-        width: 100% * 5/7;
-      }
-
-      .sider {
-        width: 100% * 2/7;
-      }
-    }
-  `}</style>
+    `}</style>
   </div>
 );
