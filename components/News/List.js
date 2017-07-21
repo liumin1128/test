@@ -23,7 +23,7 @@ export default connect(mapStateToProps)(({list, dispatch}) => {
       }
     })
     Router.push({
-      pathname: '/detail',
+      pathname: '/news/detail',
       query: { id }
     })
   }

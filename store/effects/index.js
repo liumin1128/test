@@ -52,13 +52,8 @@ function* getNewsDetail({ payload }) {
   }
 }
 
-function * test () {
-  yield take('test2')
-}
-
 function * rootSaga () {
   yield all([
-    takeLatest('test', test),
     takeLatest('news/init', getNewsInit),
     takeLatest('news/loadmore', getNewsList),
     takeLatest('news/getDetail', getNewsDetail),

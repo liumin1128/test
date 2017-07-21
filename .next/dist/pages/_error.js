@@ -18,5 +18,5 @@ exports.default = function () {
       fileName: _jsxFileName,
       lineNumber: 2
     }
-  }, 'Error');
+  }, '\u54CE\u5440\u5440\uFF0C\u8FD9\u4E2A\u9875\u9762\u6CA1\u627E\u5230');
 };
