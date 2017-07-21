@@ -12,6 +12,8 @@
     "next-redux-wrapper": "^1.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-headroom": "^2.1.6",
+    "react-modal": "^2.2.2",
     "react-redux": "^5.0.5",
     "react-waypoint": "^7.0.4",
     "redux": "^3.7.2",

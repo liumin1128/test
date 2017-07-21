@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import Headroom from 'react-headroom';
+import Headroom from 'react-headroom';
+import Menu from './Menu'
 
 class Header extends Component {
   constructor(props) {
@@ -15,17 +16,31 @@ class Header extends Component {
   }
   render() {
     const { theme } = this.state;
-    return <div className="header black">
-      <div className="container wrap" >
-        <div className="logo">
-          <img src="../../static/images/logo.jpeg" alt="" className="logo"/>
-          <h1>华人生活网</h1>
+    return <Headroom
+        onUnpin={() => {
+          this.setState({
+            theme: 'white',
+          });
+        }}
+        onUnfix={() => {
+          this.setState({
+            theme: 'black',
+          });
+        }}
+      >
+        <div className={"header " + theme}>
+        <div className="container wrap" >
+          <div className="logo">
+            <img src="../../static/images/logo.jpeg" alt="" className="logo"/>
+            <h1>华人生活网</h1>
+          </div>
+          <div className="tools">
+            <Menu>
+              <img className="tool" src="../../static/images/menu.svg" alt="" />
+            </Menu>
+            <a href="">登录</a>
+          </div>
         </div>
-        <div className="tools">
-            <img className="tool" src="../../static/images/menu.svg" alt="" />
-          <a href="">登录</a>
-        </div>
-      </div>
       <style jsx>{`
         .header {
           border-bottom: 1px solid #DBE2E8;
@@ -109,7 +124,7 @@ class Header extends Component {
         }
 
       `}</style>
-    </div>
+    </div></Headroom>
   }
 }
 
