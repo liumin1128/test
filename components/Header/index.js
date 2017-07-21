@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Headroom from 'react-headroom';
+import Link from 'next/link';
 import Menu from './Menu';
 
 class Header extends Component {
@@ -9,9 +10,6 @@ class Header extends Component {
       theme: 'black',
     };
     this.back = () => {
-      history.goBack();
-      console.log(history);
-      console.log(document.referrer);
     };
   }
   componentDidMount() {
@@ -35,10 +33,12 @@ class Header extends Component {
     >
       <div className={`header ${theme}`}>
         <div className="container wrap" >
-          <div className="logo">
-            <img src="../../static/images/logo.jpeg" alt="" className="logo" />
-            <h1>华人生活网</h1>
-          </div>
+          <Link prefetch href="/">
+            <div className="logo">
+              <img src="../../static/images/logo.jpeg" alt="" className="logo" />
+              <h1>华人生活网</h1>
+            </div>
+          </Link>
           <div className="tools">
             <Menu>
               <img className="tool" src="../../static/images/menu.svg" alt="" />
