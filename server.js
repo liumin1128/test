@@ -18,21 +18,22 @@ app.prepare()
 
   // Use the `renderAndCache` utility defined below to serve pages
   server.get('/', (req, res) => {
+    console.log('> 捕获一个请求');
     renderAndCache(req, res, '/');
   });
 
-  server.get('/detail', (req, res) => {
+  server.get('/news/detail', (req, res) => {
     const queryParams = { id: req.query.id };
-    renderAndCache(req, res, '/blog', queryParams);
+    renderAndCache(req, res, '/news/detail', queryParams);
   });
 
   server.get('*', (req, res) => {
     return handle(req, res);
   });
 
-  server.listen(3000, (err) => {
+  server.listen(8000, (err) => {
     if (err) throw err;
-    console.log('> Ready on http://localhost:3000');
+    console.log('> Ready on http://localhost:8000');
   });
 });
 
