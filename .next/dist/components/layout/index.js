@@ -1,43 +1,73 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Sider = exports.Main = exports.Container = undefined;
 
-var _style = require("_styled-jsx@1.0.8@styled-jsx/style.js");
-
-var _style2 = _interopRequireDefault(_style);
-
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Header = require("../Header");
+var _Container = require('./Container');
+
+var _Container2 = _interopRequireDefault(_Container);
+
+var _Main = require('./Main');
+
+var _Main2 = _interopRequireDefault(_Main);
+
+var _Sider = require('./Sider');
+
+var _Sider2 = _interopRequireDefault(_Sider);
+
+var _Head = require('./Head');
+
+var _Head2 = _interopRequireDefault(_Head);
+
+var _Header = require('../Header');
 
 var _Header2 = _interopRequireDefault(_Header);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Container = exports.Container = function Container(_ref) {
+var _jsxFileName = '/Users/liumin/Desktop/Git/ssr/components/Layout/index.js';
+
+exports.default = function (_ref) {
   var children = _ref.children;
-  return _react2.default.createElement("div", {
-    "data-jsx": 2130651328
-  }, _react2.default.createElement("div", { className: "header", "data-jsx": 2130651328
-  }, _react2.default.createElement(_Header2.default, null)), _react2.default.createElement("div", { className: "container", "data-jsx": 2130651328
-  }, _react2.default.createElement("div", { className: "row", "data-jsx": 2130651328
-  }, children)), _react2.default.createElement(_style2.default, {
-    styleId: 2130651328,
-    css: ".container{margin:0 auto}@media (min-width:48rem){.container{max-width:1500px}.row{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.row div{position:relative}}@media (min-width:78rem){.container{max-width:2400px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}.row{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}.main{width:100% * 5/7}.sider{width:100% * 2/7}}"
-  }));
-};
-
-var Main = exports.Main = function Main(_ref2) {
-  var children = _ref2.children;
-  return _react2.default.createElement("div", { className: "main" }, children);
-};
-
-var Sider = exports.Sider = function Sider(_ref3) {
-  var children = _ref3.children;
-  return _react2.default.createElement("div", { className: "sider" }, children);
+  return _react2.default.createElement('div', {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    }
+  }, _react2.default.createElement(_Head2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    }
+  }), _react2.default.createElement(_Header2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    }
+  }), _react2.default.createElement(_Container2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    }
+  }, _react2.default.createElement(_Main2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    }
+  }, children), _react2.default.createElement(_Sider2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    }
+  }, _react2.default.createElement('h1', {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    }
+  }, 'Sider'))));
 };

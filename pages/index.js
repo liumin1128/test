@@ -1,20 +1,10 @@
 import React, { Component } from 'react'
-
 import { withReduxSaga } from '../store'
 
-import Head from '../components/Head'
+import Layout from '../components/Layout'
 import NewsList from '../components/News/List'
-import { Container, Main, Sider } from '../components/layout'
 
-const Index = () => <div>
-    <Head />
-    <Container>
-      <Main>
-        <NewsList />
-      </Main>
-      <Sider>sider</Sider>
-    </Container>
-</div>
+const Index = () => <Layout><NewsList></NewsList></Layout>
 
 Index.getInitialProps = async ({ req, store }) => {
   store.dispatch({

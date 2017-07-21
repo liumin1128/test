@@ -18,22 +18,31 @@ var _react2 = _interopRequireDefault(_react);
 
 var _store = require('../store');
 
-var _Head = require('../components/Head');
+var _Layout = require('../components/Layout');
 
-var _Head2 = _interopRequireDefault(_Head);
+var _Layout2 = _interopRequireDefault(_Layout);
 
 var _List = require('../components/News/List');
 
 var _List2 = _interopRequireDefault(_List);
 
-var _layout = require('../components/layout');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _this = undefined;
+var _jsxFileName = '/Users/liumin/Desktop/Git/ssr/pages/index.js?entry',
+    _this = undefined;
 
 var Index = function Index() {
-  return _react2.default.createElement('div', null, _react2.default.createElement(_Head2.default, null), _react2.default.createElement(_layout.Container, null, _react2.default.createElement(_layout.Main, null, _react2.default.createElement(_List2.default, null)), _react2.default.createElement(_layout.Sider, null, 'sider')));
+  return _react2.default.createElement(_Layout2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    }
+  }, _react2.default.createElement(_List2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    }
+  }));
 };
 
 Index.getInitialProps = function () {
