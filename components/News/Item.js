@@ -1,21 +1,23 @@
-export default ({ title, content, type, cover, readCount, commentCount, goToUrl, id }) => <div className="item" >
-  <img className="cover" src={cover} alt=""/>
+import React from 'react';
+
+export default ({ title, content, type, cover, readCount, commentCount }) => (<div className="item" >
+  <img className="cover" src={cover} alt="" />
   <div className="box">
     <h3 className="title">{title}</h3>
     <summary className="desc">{content}</summary>
     <footer className="meta">
-        <div className="source"></div>
-        <span></span>
-        <div className="actions">
-          <span className="like">
-            <img className='icon' src="../../static/images/like.svg" alt="" />
-            {readCount}
-          </span>
-          <span className="comment">
-            <img className='icon' src="../../static/images/comment.svg" alt="" />
-            {readCount}
-          </span>
-        </div>
+      <div className="source">{type}</div>
+      <span />
+      <div className="actions">
+        <span className="like">
+          <img className="icon" src="../../static/images/like.svg" alt="" />
+          {readCount}
+        </span>
+        <span className="comment">
+          <img className="icon" src="../../static/images/comment.svg" alt="" />
+          {commentCount}
+        </span>
+      </div>
     </footer>
   </div>
   <style jsx>{`
@@ -91,4 +93,4 @@ export default ({ title, content, type, cover, readCount, commentCount, goToUrl,
     }
 
   `}</style>
-</div>
+</div>);

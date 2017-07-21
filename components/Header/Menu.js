@@ -77,13 +77,13 @@ class Menu extends Component {
         <div className="classbox">
           <h3>新闻分类</h3>
           <div className="items">
-            {NEWS_CLASS_LIST.map((i, index) => <span key={index}>{i}</span>)}
+            {NEWS_CLASS_LIST.map(i => <span key={i}>{i}</span>)}
           </div>
         </div>
         <div className="classbox">
           <h3>分类信息</h3>
           <div className="items">
-            {FENLEI_CLASS_LIST.map((i, index) => <span key={index}>{i}</span>)}
+            {FENLEI_CLASS_LIST.map(i => <span key={i}>{i}</span>)}
           </div>
         </div>
       </Modal>

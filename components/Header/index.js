@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Headroom from 'react-headroom';
-import Menu from './Menu'
+import Menu from './Menu';
 
 class Header extends Component {
   constructor(props) {
@@ -16,22 +16,22 @@ class Header extends Component {
   }
   render() {
     const { theme } = this.state;
-    return <Headroom
-        onUnpin={() => {
-          this.setState({
-            theme: 'white',
-          });
-        }}
-        onUnfix={() => {
-          this.setState({
-            theme: 'black',
-          });
-        }}
-      >
-        <div className={"header " + theme}>
+    return (<Headroom
+      onUnpin={() => {
+        this.setState({
+          theme: 'white',
+        });
+      }}
+      onUnfix={() => {
+        this.setState({
+          theme: 'black',
+        });
+      }}
+    >
+      <div className={`header ${theme}`}>
         <div className="container wrap" >
           <div className="logo">
-            <img src="../../static/images/logo.jpeg" alt="" className="logo"/>
+            <img src="../../static/images/logo.jpeg" alt="" className="logo" />
             <h1>华人生活网</h1>
           </div>
           <div className="tools">
@@ -41,7 +41,7 @@ class Header extends Component {
             <a href="">登录</a>
           </div>
         </div>
-      <style jsx>{`
+        <style jsx>{`
         .header {
           border-bottom: 1px solid #DBE2E8;
           margin-bottom: 16px;
@@ -124,7 +124,7 @@ class Header extends Component {
         }
 
       `}</style>
-    </div></Headroom>
+      </div></Headroom>);
   }
 }
 

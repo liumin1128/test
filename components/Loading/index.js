@@ -1,4 +1,6 @@
-export default () => <div className="loading">
+import React from 'react';
+
+export default () => (<div className="loading">
   <img className="img" src="../../static/images/loading.svg" alt="" />
   努力加载中...
   <style global jsx>{`
@@ -26,4 +28,4 @@ export default () => <div className="loading">
       transition: 1s;
     }
   `}</style>
-</div>
+</div>);

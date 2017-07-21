@@ -11,4 +11,3 @@ export const APIURL = 'https://data.huarenhouse.com';
 // 七牛自定义域名
 export const QINIUURL = 'imgs.huarenhouse.com';
 
-

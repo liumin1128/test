@@ -1,7 +1,9 @@
+import React from 'react';
+
 export default ({
-  title, photos = [], content, zanCount, from, updatedAt
-}) => <div className="box">
-  <img src={photos && photos[0]} alt="" className="banner"/>
+  title, photos = [], content, zanCount, from, updatedAt,
+}) => (<div className="box">
+  <img src={photos && photos[0]} alt="" className="banner" />
   <h1 className="title">{title}</h1>
   <div className="meta">
     <span>{zanCount}</span>
@@ -46,4 +48,4 @@ export default ({
     margin-bottom: 20px;
   }
   `}</style>
-</div>
+</div>);

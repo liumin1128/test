@@ -15,4 +15,3 @@ export const FENLEI_CLASS_LIST = [
   '二手交易',
   '求职招聘',
 ];
-

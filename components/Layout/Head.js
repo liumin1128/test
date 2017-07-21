@@ -1,11 +1,12 @@
-import Head from 'next/head'
+import React from 'react';
+import Head from 'next/head';
 
 export default ({
   title = '华人生活网',
-  description = '全美最大华人社区'
+  description = '全美最大华人社区',
 }) => (
   <Head>
-    <meta charset="UTF-8" />
+    <meta charSet="UTF-8" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,4 +42,4 @@ export default ({
 
       `}</style>
   </Head>
-)
+);

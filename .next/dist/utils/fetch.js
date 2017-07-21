@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _extends2 = require('_babel-runtime@6.23.0@babel-runtime/helpers/extends');
@@ -25,23 +25,23 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _es6Promise2.default.polyfill();
 
 exports.default = function (url) {
-    var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-    console.log('访问：' + _api.APIURL + url);
-    var options = {
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        method: 'POST',
-        body: (0, _stringify2.default)((0, _extends3.default)({}, params))
-    };
-    return fetch(_api.APIURL + url, options).then(function (response) {
-        if (response.status >= 400) {
-            throw new Error("Bad response from server");
-        }
-        return response.json();
-    }).catch(function (err) {
-        return { err: err };
-    });
+  console.log('\u8BBF\u95EE\uFF1A' + _api.APIURL + url);
+  var options = {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: (0, _stringify2.default)((0, _extends3.default)({}, params))
+  };
+  return fetch(_api.APIURL + url, options).then(function (response) {
+    if (response.status >= 400) {
+      throw new Error('Bad response from server');
+    }
+    return response.json();
+  }).catch(function (err) {
+    return { err: err };
+  });
 };

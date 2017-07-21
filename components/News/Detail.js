@@ -1,11 +1,7 @@
-import {connect} from 'react-redux'
-import Waypoint from 'react-waypoint';
-import Router from 'next/router'
+import React from 'react';
+import { connect } from 'react-redux';
 
-import { formatNewsList } from '../../utils/format.js'
-
-import Loading from '../Loading'
-import Content from './Content'
+import Content from './Content';
 
 function mapStateToProps(state) {
   const { detail = {} } = state.news;
@@ -14,10 +10,9 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(({ detail, dispatch}) => {
+export default connect(mapStateToProps)(({ detail }) => {
   return (<div>
     <Content {...detail} />
   </div>);
 });
-
 

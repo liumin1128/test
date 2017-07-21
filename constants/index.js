@@ -1,3 +1,3 @@
-import * as api from './api.js'
+import * as api from './api.js';
 
-export default { ...api }
+export default { ...api };
