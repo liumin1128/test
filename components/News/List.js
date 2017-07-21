@@ -38,12 +38,15 @@ export default connect(mapStateToProps)(({ list, dispatch }) => {
       },
     });
   }
-  return (<div style={{ margin: '-20px 0' }}>
-    {
+  return (<div >
+    <div style={{ marginTop: '-20px', minHeight: 50 }}>
+      {
       list.map(i => (<div onClick={gotodetail.bind(this, i.id)} key={i.id}>
         <Item {...i} />
       </div>))
     }
+    </div>
+
     <Waypoint
       onEnter={loadmore}
       onLeave={() => {

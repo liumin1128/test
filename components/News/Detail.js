@@ -10,6 +10,8 @@ class Detail extends Component {
   }
   componentDidMount() {
     window.scrollTo(0, 0);
+    console.log(this);
+    // this.props.dispatch({ type: 'news/init' });
   }
   render() {
     const { detail } = this.props;

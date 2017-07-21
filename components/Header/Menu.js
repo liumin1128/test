@@ -101,10 +101,6 @@ class Menu extends Component {
         }
         .classbox .items {
           width: 100%;
-          // display: flex;
-          // flex-wrap: wrap;
-          // justify-content: space-around;
-
         }
         .classbox span {
           display: inline-block;
