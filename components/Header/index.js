@@ -95,6 +95,7 @@ class Header extends Component {
 
         .black {
           background: #1b1b1f;
+          border: none;
         }
         .tools a {
           color: #fff;
@@ -127,7 +128,6 @@ class Header extends Component {
             padding: 14px;
           }
         }
-
       `}</style>
       </div></Headroom>);
   }
