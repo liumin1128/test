@@ -11,7 +11,8 @@ var UPDATE_NEWS = exports.UPDATE_NEWS = '/news/update';
 var DELETE_NEWS = exports.DELETE_NEWS = '/news/delete';
 
 // 全局api地址
-var APIURL = exports.APIURL = 'https://data.huarenhouse.com';
+// export const APIURL = 'https://data.huarenhouse.com';
+var APIURL = exports.APIURL = 'https://api.huarenshenghuo.com';
 
 // 七牛自定义域名
 var QINIUURL = exports.QINIUURL = 'imgs.huarenhouse.com';

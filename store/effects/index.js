@@ -1,10 +1,12 @@
 import { all, call, select, put, takeLatest } from 'redux-saga/effects';
-import { GET_NEWS } from '../../constants/api.js';
+import { GET_NEWS, GET_NEWSTYPES } from '../../constants/api.js';
 import request from '../../utils/fetch.js';
 
 const defaultParams = {
   page: 1,
   pageSize: 10,
+  sort: -1,
+  sortBy: 'createdAt',
 };
 
 function* getNewsInit() {
@@ -27,10 +29,16 @@ function* getNewsList({ payload }) {
   yield put({ type: 'news/save', payload: { list: list.concat(data.body.result) } });
 }
 
+function* getNewsType({ payload }) {
+  const data = yield call(request, GET_NEWSTYPES, { ...defaultParams, ...payload });
+  console.log(data);
+  yield put({ type: 'news/save', payload: { newsTypes: data.body.result } });
+}
+
 function* getNewsDetail({ payload }) {
   const { news } = yield select();
   const currentDetail = news.detail;
-  if (payload.id === currentDetail.id) {
+  if (payload.id === currentDetail._id) {
     console.log('detail已存在');
   } else {
     console.log('detail不存在');
@@ -55,6 +63,7 @@ function * rootSaga() {
     takeLatest('news/init', getNewsInit),
     takeLatest('news/loadmore', getNewsList),
     takeLatest('news/getDetail', getNewsDetail),
+    takeLatest('news/getNewsType', getNewsType),
   ]);
 }
 

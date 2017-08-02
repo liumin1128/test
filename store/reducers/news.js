@@ -1,5 +1,6 @@
 const initState = {
   list: [],
+  newsTypes: [],
   detail: {},
 };
 function news(state = initState, action) {

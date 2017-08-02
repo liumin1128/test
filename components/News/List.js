@@ -41,7 +41,7 @@ export default connect(mapStateToProps)(({ list, dispatch }) => {
   return (<div >
     <div style={{ marginTop: '-20px', minHeight: 50 }}>
       {
-      list.map(i => (<div onClick={gotodetail.bind(this, i.id)} key={i.id}>
+      list.map(i => (<div onClick={gotodetail.bind(this, i._id)} key={i._id}>
         <Item {...i} />
       </div>))
     }

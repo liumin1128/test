@@ -6,7 +6,8 @@ export const UPDATE_NEWS = '/news/update';
 export const DELETE_NEWS = '/news/delete';
 
 // 全局api地址
-export const APIURL = 'https://data.huarenhouse.com';
+// export const APIURL = 'https://data.huarenhouse.com';
+export const APIURL = 'https://api.huarenshenghuo.com';
 
 // 七牛自定义域名
 export const QINIUURL = 'imgs.huarenhouse.com';

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
-import { NEWS_CLASS_LIST, FENLEI_CLASS_LIST } from '../../constants/common.js';
+import { connect } from 'react-redux';
+import Router from 'next/router';
+import { FENLEI_CLASS_LIST } from '../../constants/common.js';
 
 function prevent(event) {
   if (event.cancelable) {
@@ -30,10 +32,17 @@ class Menu extends Component {
         }
       });
     };
+    this.setFilter = (obj, val) => {
+      Router.push({
+        pathname: '/',
+        query: { [obj]: val },
+      });
+      this.tragger();
+    };
   }
   render() {
     const { visible } = this.state;
-    const { children } = this.props;
+    const { children, newsTypes } = this.props;
     return (<div>
       <span onClick={this.tragger} className="button">
         {children}
@@ -77,7 +86,12 @@ class Menu extends Component {
         <div className="classbox">
           <h3>新闻分类</h3>
           <div className="items">
-            {NEWS_CLASS_LIST.map(i => <span key={i}>{i}</span>)}
+            {newsTypes.map(({ _id, typeName }) => (<span
+              onClick={this.setFilter.bind(this, 'newsType', _id)}
+              key={_id}
+            >
+              {typeName}
+            </span>))}
           </div>
         </div>
         <div className="classbox">
@@ -101,6 +115,7 @@ class Menu extends Component {
         }
         .classbox .items {
           width: 100%;
+
         }
         .classbox span {
           display: inline-block;
@@ -121,4 +136,12 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+function mapStateToProps(state) {
+  const { newsTypes = [] } = state.news;
+  console.log(newsTypes);
+  return {
+    newsTypes,
+  };
+}
+
+export default connect(mapStateToProps)(Menu);

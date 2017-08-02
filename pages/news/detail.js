@@ -11,6 +11,9 @@ Index.getInitialProps = async ({ query, store }) => {
     type: 'news/getDetail',
     payload: query,
   });
+  store.dispatch({
+    type: 'news/getNewsType',
+  });
 };
 
 export default withReduxSaga(Index);
