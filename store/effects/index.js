@@ -1,6 +1,8 @@
 import { all, call, select, put, takeLatest } from 'redux-saga/effects';
-import { GET_NEWS, GET_NEWSTYPES } from '../../constants/api.js';
+import { GET_NEWS, GET_NEWSTYPES, ZAN, ADD_COMMENT } from '../../constants/api.js';
 import request from '../../utils/fetch.js';
+import { requestWithToken } from '../../utils/request.js';
+
 
 const defaultParams = {
   page: 1,
@@ -58,12 +60,32 @@ function* getNewsDetail({ payload }) {
   }
 }
 
+function* zan({ payload }) {
+  const data = yield call(requestWithToken, ZAN, payload);
+  console.log(data);
+  // yield put({ type: 'news/save', payload: { newsTypes: data.body.result } });
+}
+
+// function* getZanList({ payload }) {
+//   const data = yield call(requestWithToken, ZAN, payload);
+//   console.log(data);
+//   // yield put({ type: 'news/save', payload: { newsTypes: data.body.result } });
+// }
+
+function* addComment({ payload }) {
+  const data = yield call(requestWithToken, ADD_COMMENT, payload);
+  console.log(data);
+  // yield put({ type: 'news/save', payload: { newsTypes: data.body.result } });
+}
+
 function * rootSaga() {
   yield all([
     takeLatest('news/init', getNewsInit),
     takeLatest('news/loadmore', getNewsList),
     takeLatest('news/getDetail', getNewsDetail),
     takeLatest('news/getNewsType', getNewsType),
+    takeLatest('news/zan', zan),
+    takeLatest('news/addComment', addComment),
   ]);
 }
 

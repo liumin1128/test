@@ -9,6 +9,14 @@ class Detail extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.zan = () => {
+      const item = this.props.detail._id;
+      this.props.dispatch({ type: 'news/zan', payload: { item } });
+    };
+    this.sentComment = (content) => {
+      const item = this.props.detail._id;
+      this.props.dispatch({ type: 'news/addComment', payload: { item, content } });
+    };
   }
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -18,10 +26,10 @@ class Detail extends Component {
   render() {
     const { detail } = this.props;
     return (<div>
-      <Input />
+      <Input onSent={this.sentComment} />
+      <Zan onZan={this.zan} />
       <Comment />
       <Content {...detail} />
-      <Zan />
     </div>);
   }
 }

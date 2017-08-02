@@ -138,7 +138,6 @@ class Menu extends Component {
 
 function mapStateToProps(state) {
   const { newsTypes = [] } = state.news;
-  console.log(newsTypes);
   return {
     newsTypes,
   };

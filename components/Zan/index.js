@@ -1,8 +1,11 @@
 import React from 'react';
 
-export default ({ avatars = [] }) => (<div>
+export default ({ avatars = [], onZan }) => (<div>
   <div className="zan">
-    <div className="zan-button">赞</div>
+    <div
+      className="zan-button"
+      onClick={onZan}
+    >赞</div>
     <div className="avatars">
       {
         avatars.length === 0 ?
