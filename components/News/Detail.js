@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Content from './Content';
 import Zan from '../Zan';
 import Comment from '../Comment';
+import Input from '../ButtomInput';
 
 class Detail extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Detail extends Component {
   render() {
     const { detail } = this.props;
     return (<div>
+      <Input />
       <Comment />
       <Content {...detail} />
       <Zan />

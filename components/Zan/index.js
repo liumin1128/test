@@ -58,7 +58,6 @@ export default ({ avatars = [] }) => (<div>
       width: 30px;
       height: 30px;
       margin: 5px;
-
     }
     .avatar image {
       width: 100%;
