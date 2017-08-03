@@ -35,7 +35,7 @@ export default ({ title, content, type, cover, readCount, commentCount }) => (<d
       height: 240px;
       background-position: 50% 50%;
       background-repeat: no-repeat;
-      background-size: 100% auto;
+      background-size: 120% auto;
     }
     .box {
       padding: 20px;
@@ -77,6 +77,10 @@ export default ({ title, content, type, cover, readCount, commentCount }) => (<d
     }
 
     @media (min-width: 768px) {
+      .cover {
+        height: 240px;
+        background-size: 100% auto;
+      }
       .item {
         border-radius: 3px;
         overflow: hidden;

@@ -31,7 +31,6 @@ function* getNewsList({ payload }) {
 
 function* getNewsType({ payload }) {
   const data = yield call(request, GET_NEWSTYPES, { ...defaultParams, ...payload });
-  console.log(data);
   yield put({ type: 'news/save', payload: { newsTypes: data.body.result } });
 }
 
@@ -66,5 +65,5 @@ export default [
   takeLatest('news/init', getNewsInit),
   takeLatest('news/loadmore', getNewsList),
   takeLatest('news/getDetail', getNewsDetail),
-  // takeLatest('news/getNewsType', getNewsType),
+  takeLatest('news/getNewsType', getNewsType),
 ];
