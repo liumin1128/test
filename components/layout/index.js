@@ -4,12 +4,13 @@ import Main from './Main';
 import Sider from './Sider';
 import Head from './Head';
 import Header from '../Header';
+import Recommend from '../Recommend';
 
 export default ({ children }) => (<div>
   <Head />
   <Header />
   <Container>
+    <Sider><Recommend /></Sider>
     <Main>{ children }</Main>
-    <Sider><h1>Sider</h1></Sider>
   </Container>
 </div>);
