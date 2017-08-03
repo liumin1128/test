@@ -1,7 +1,7 @@
 import React from 'react';
 import { withReduxSaga } from '../store';
 
-import Layout from '../components/Layout/index.js';
+import Layout from '../components/Layout';
 import NewsList from '../components/News/List';
 
 const Index = () => <Layout><NewsList /></Layout>;
