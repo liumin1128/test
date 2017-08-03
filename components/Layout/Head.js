@@ -18,30 +18,22 @@ export default ({
         body {
           background-color: #fafbfc;
         }
-
         a,body {
           color: #292525;
           font-size: 16px;
           font-weight: 400;
           -webkit-font-smoothing: antialiased;
         }
-
-
         a {
           text-decoration: none
         }
-
         body,h1,h2,h3,h4,h5,h6{
           margin: 0;
           padding: 0;
         }
-
         html {
           font-family: -apple-system, BlinkMacSystemFont, PingFang-SC-Regular, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif
         }
-
       `}</style>
-
-
   </Head>
 );
