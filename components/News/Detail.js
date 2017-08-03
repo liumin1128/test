@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Router from 'next/router';
+
 import Content from './Content';
 import Zan from '../Zan';
 import Comment from '../Comment';
@@ -20,6 +22,7 @@ class Detail extends Component {
   }
   componentDidMount() {
     window.scrollTo(0, 0);
+    Router.prefetch('/');
     const item = this.props.detail._id;
     this.props.dispatch({ type: 'news/init' });
     this.props.dispatch({ type: 'detail/init', payload: { item } });

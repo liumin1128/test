@@ -58,20 +58,20 @@ exports.default = function (_ref) {
       fileName: _jsxFileName,
       lineNumber: 12
     }
-  }, _react2.default.createElement(_Sider2.default, {
+  }, _react2.default.createElement(_Main2.default, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 13
     }
-  }, _react2.default.createElement(_Recommend2.default, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    }
-  })), _react2.default.createElement(_Main2.default, {
+  }, children), _react2.default.createElement(_Sider2.default, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
     }
-  }, children)));
+  }, _react2.default.createElement(_Recommend2.default, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    }
+  }))));
 };

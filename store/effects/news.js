@@ -52,6 +52,7 @@ function* getNewsDetail({ payload }) {
     } else {
       // window.scrollTo(0, 0);
       console.log('detail在列表中被找到');
+      window.scrollTo(0, 0);
     }
     yield put({ type: 'news/save', payload: { detail } });
   }

@@ -10,7 +10,7 @@ export default ({ children }) => (<div>
   <Head />
   <Header />
   <Container>
-    <Sider><Recommend /></Sider>
     <Main>{ children }</Main>
+    <Sider><Recommend /></Sider>
   </Container>
 </div>);

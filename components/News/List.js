@@ -23,6 +23,9 @@ export default connect(mapStateToProps)(({ list, dispatch }) => {
         id,
       },
     });
+    alert(id);
+    console.log('ididididid');
+    console.log(id);
     Router.push({
       pathname: '/news/detail',
       query: { id },
