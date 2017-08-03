@@ -44,7 +44,7 @@ function* getNewsDetail({ payload }) {
     console.log('detail不存在');
     const list = news.list;
     let detail = list.find((i) => {
-      return i.id === payload.id;
+      return i._id === payload.id;
     });
     if (!detail) {
       console.log('detail联网才被找到');

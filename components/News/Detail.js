@@ -25,10 +25,10 @@ class Detail extends Component {
   render() {
     const { detail } = this.props;
     return (<div>
+      <Content {...detail} />
       <Input onSent={this.sentComment} />
       <Zan onZan={this.zan} />
       <Comment />
-      <Content {...detail} />
     </div>);
   }
 }
