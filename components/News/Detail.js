@@ -11,16 +11,15 @@ class Detail extends Component {
     this.state = {};
     this.zan = () => {
       const item = this.props.detail._id;
-      this.props.dispatch({ type: 'news/zan', payload: { item } });
+      this.props.dispatch({ type: 'detail/zan', payload: { item } });
     };
     this.sentComment = (content) => {
       const item = this.props.detail._id;
-      this.props.dispatch({ type: 'news/addComment', payload: { item, content } });
+      this.props.dispatch({ type: 'detail/addComment', payload: { item, content } });
     };
   }
   componentDidMount() {
     window.scrollTo(0, 0);
-    console.log(this);
     this.props.dispatch({ type: 'news/init' });
   }
   render() {
