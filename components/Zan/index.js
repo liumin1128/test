@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ avatars = [], onZan }) => (<div>
+export default ({ list = [], onZan }) => (<div>
   <div className="zan">
     <div
       className="zan-button"
@@ -8,10 +8,10 @@ export default ({ avatars = [], onZan }) => (<div>
     >赞</div>
     <div className="avatars">
       {
-        avatars.length === 0 ?
+        list.length === 0 ?
           <div className="zan-empty">有赞，你不点一下吗？</div> :
-          avatars.map(i => (<div>
-            <img src={i} alt="" />
+          list.map(i => (<div>
+            <img className="avatar" src={i.userAvatarUrl} alt="" />
           </div>))
       }
     </div>
@@ -52,6 +52,11 @@ export default ({ avatars = [], onZan }) => (<div>
       background: rgba(0,0,0,0.05);
       border-radius: 5px;
       width: 100%;
+    }
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 100px;
     }
     .zan-empty {
       font-size: 12px;

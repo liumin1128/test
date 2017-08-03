@@ -20,14 +20,16 @@ class Detail extends Component {
   }
   componentDidMount() {
     window.scrollTo(0, 0);
+    const item = this.props.detail._id;
     this.props.dispatch({ type: 'news/init' });
+    this.props.dispatch({ type: 'detail/init', payload: { item } });
   }
   render() {
-    const { detail } = this.props;
+    const { detail, zanList = [] } = this.props;
     return (<div>
       <Content {...detail} />
       <Input onSent={this.sentComment} />
-      <Zan onZan={this.zan} />
+      <Zan list={zanList} onZan={this.zan} />
       <Comment />
     </div>);
   }
@@ -35,8 +37,10 @@ class Detail extends Component {
 
 function mapStateToProps(state) {
   const { detail = {} } = state.news;
+  const { zanList = [] } = state.detail;
   return {
     detail,
+    zanList,
   };
 }
 

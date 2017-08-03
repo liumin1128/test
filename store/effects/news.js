@@ -54,10 +54,6 @@ function* getNewsDetail({ payload }) {
       console.log('detail在列表中被找到');
     }
     yield put({ type: 'news/save', payload: { detail } });
-    yield all([
-      put({ type: 'detail/getZan' }),
-      put({ type: 'detail/getComment' }),
-    ]);
   }
 }
 

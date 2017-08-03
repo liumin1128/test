@@ -8,6 +8,6 @@ export const requestWithToken = (url, params = {}) => {
   const { user } = store.getState();
   const { token } = user;
   if (token) {
-    request(url, { ...params, token });
+    return request(url, { ...params, token });
   }
 };

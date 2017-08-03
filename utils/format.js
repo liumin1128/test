@@ -9,7 +9,7 @@ export const formatNewsList = (data) => {
       updatedAt: preatyTime(i.updatedAt) || undefined,
       type: i.newsType ? i.newsType.typeName : undefined,
       cover: i.photos ? i.photos[0] : undefined,
-      content: getStrless(i.content, 60, 3),
+      content: getStrless(i.content.replace(/<[^>]+>/g, ''), 70, 3),
     };
   });
 };
