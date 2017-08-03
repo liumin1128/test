@@ -4,6 +4,8 @@ import { withReduxSaga } from '../store';
 import Layout from '../components/Layout';
 import NewsList from '../components/News/List';
 
+console.log(Layout);
+
 const Index = () => <Layout><NewsList /></Layout>;
 
 Index.getInitialProps = async ({ store }) => {
