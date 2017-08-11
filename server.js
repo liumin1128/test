@@ -6,6 +6,8 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dir: '.', dev });
 const handle = app.getRequestHandler();
 
+console.log('111');
+
 const port = dev ? 8000 : 3000;
 
 // This is where we cache our rendered HTML pages
@@ -27,6 +29,13 @@ app.prepare()
   server.get('/news/detail', (req, res) => {
     const queryParams = { id: req.query.id };
     renderAndCache(req, res, '/news/detail', queryParams);
+  });
+
+  server.get('/oauth', (req, res) => {
+    const queryParams = { token: req.query.token };
+    console.log('有用户登录成功');
+    console.log(queryParams);
+    renderAndNoCache(req, res, '/oauth', queryParams);
   });
 
   server.get('*', (req, res) => {
@@ -64,6 +73,16 @@ function renderAndCache(req, res, pagePath, queryParams) {
       console.log(`CACHE MISS: ${key}`);
       ssrCache.set(key, html);
 
+      res.send(html);
+    })
+    .catch((err) => {
+      app.renderError(err, req, res, pagePath, queryParams);
+    });
+}
+
+function renderAndNoCache(req, res, pagePath, queryParams) {
+  app.renderToHTML(req, res, pagePath, queryParams)
+    .then((html) => {
       res.send(html);
     })
     .catch((err) => {
