@@ -1,5 +1,5 @@
 const initState = {
-  token: '46vt63K8lIu44RJd18qWwL87V4vrHdHj',
+  token: '',
 };
 function user(state = initState, action) {
   switch (action.type) {

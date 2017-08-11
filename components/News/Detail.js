@@ -19,6 +19,10 @@ class Detail extends Component {
       const item = this.props.detail._id;
       this.props.dispatch({ type: 'detail/addComment', payload: { item, content } });
     };
+    this.delComment = (id) => {
+      const item = this.props.detail._id;
+      this.props.dispatch({ type: 'detail/delComment', payload: { id, item } });
+    };
   }
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -28,22 +32,23 @@ class Detail extends Component {
     this.props.dispatch({ type: 'detail/init', payload: { item } });
   }
   render() {
-    const { detail, zanList = [] } = this.props;
+    const { detail, zanList = [], commentList = [] } = this.props;
     return (<div>
       <Content {...detail} />
       <Input onSent={this.sentComment} />
       <Zan list={zanList} onZan={this.zan} />
-      <Comment />
+      <Comment comments={commentList} onDel={this.delComment} />
     </div>);
   }
 }
 
 function mapStateToProps(state) {
   const { detail = {} } = state.news;
-  const { zanList = [] } = state.detail;
+  const { zanList = [], commentList } = state.detail;
   return {
     detail,
     zanList,
+    commentList,
   };
 }
 

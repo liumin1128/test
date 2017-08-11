@@ -10,9 +10,9 @@ Sign.getInitialProps = async ({ store, query }) => {
   const { token } = query;
   if (token) {
     store.dispatch({
-      type: 'user/login',
+      type: 'user/save',
       payload: {
-        token: 'xxx',
+        token,
       },
     });
     return { status: true };

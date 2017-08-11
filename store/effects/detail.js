@@ -1,11 +1,12 @@
 import { all, call, takeLatest, put } from 'redux-saga/effects';
-import { ZAN, GET_ZAN, GET_ZAN_STATUS, ADD_COMMENT } from '../../constants/api.js';
+import { ZAN, GET_ZAN, GET_ZAN_STATUS, ADD_COMMENT, GET_COMMENT, DEL_COMMENT } from '../../constants/api.js';
 import { requestWithToken } from '../../utils/request.js';
 
 function* init({ payload }) {
   yield all([
     put({ type: 'detail/getZan', payload }),
     put({ type: 'detail/getZanStatus', payload }),
+    put({ type: 'detail/getComments', payload }),
   ]);
 }
 
@@ -28,7 +29,22 @@ function* getZanStatus({ payload }) {
 function* addComment({ payload }) {
   const data = yield call(requestWithToken, ADD_COMMENT, payload);
   console.log(data);
+  yield put({ type: 'detail/getComments', payload: { item: payload.item } });
 }
+
+function* getComments({ payload }) {
+  const data = yield call(requestWithToken, GET_COMMENT, payload);
+  console.log('GET_COMMENT');
+  console.log(data);
+  yield put({ type: 'detail/save', payload: { commentList: data } });
+}
+
+function* delComment({ payload }) {
+  const data = yield call(requestWithToken, DEL_COMMENT, { id: payload.id });
+  console.log(data);
+  yield put({ type: 'detail/getComments', payload: { item: payload.item } });
+}
+
 
 export default [
   takeLatest('detail/init', init),
@@ -36,4 +52,6 @@ export default [
   takeLatest('detail/getZan', getZanList),
   takeLatest('detail/getZanStatus', getZanStatus),
   takeLatest('detail/addComment', addComment),
+  takeLatest('detail/getComments', getComments),
+  takeLatest('detail/delComment', delComment),
 ];

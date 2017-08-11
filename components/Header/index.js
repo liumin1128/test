@@ -3,6 +3,8 @@ import Headroom from 'react-headroom';
 import Link from 'next/link';
 import Menu from './Menu';
 
+import { isWeixin } from '../../utils/common.js';
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -10,6 +12,13 @@ class Header extends Component {
       theme: 'black',
     };
     this.back = () => {
+    };
+    this.login = () => {
+      if (isWeixin()) {
+        window.location.href = 'https://api.huarenshenghuo.com/wxservice/web/pclogincallback';
+      } else {
+        window.location.href = 'https://api.huarenshenghuo.com/wxservice/web/pcQRcode';
+      }
     };
   }
   componentDidMount() {
@@ -43,7 +52,7 @@ class Header extends Component {
             <Menu>
               <img className="tool" src="../../static/images/menu.svg" alt="" />
             </Menu>
-            <a href="">登录</a>
+            <a onClick={this.login}>登录</a>
           </div>
         </div>
         <style jsx>{`

@@ -13,9 +13,9 @@ var DELETE_NEWS = exports.DELETE_NEWS = '/news/delete';
 var ZAN = exports.ZAN = '/infoList/info_list_zan';
 var GET_ZAN = exports.GET_ZAN = '/infoList/info_list_zanCount';
 var GET_ZAN_STATUS = exports.GET_ZAN_STATUS = '/infoList/info_list_zanStatus';
-var GET_COMMENT = exports.GET_COMMENT = '/infoList/info_list_commentList';
-var ADD_COMMENT = exports.ADD_COMMENT = '/infoList/info_list_addComment';
-var DEL_COMMENT = exports.DEL_COMMENT = '/infoList/info_list_deleteComment';
+var GET_COMMENT = exports.GET_COMMENT = '/news/commentList';
+var ADD_COMMENT = exports.ADD_COMMENT = '/news/addComment';
+var DEL_COMMENT = exports.DEL_COMMENT = '/news/deleteComment';
 
 // 全局api地址
 // export const APIURL = 'https://data.huarenhouse.com';

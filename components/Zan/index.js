@@ -10,7 +10,7 @@ export default ({ list = [], onZan }) => (<div>
       {
         list.length === 0 ?
           <div className="zan-empty">有赞，你不点一下吗？</div> :
-          list.map(i => (<div>
+          list.map(i => (<div key={i.userAvatarUrl}>
             <img className="avatar" src={i.userAvatarUrl} alt="" />
           </div>))
       }
