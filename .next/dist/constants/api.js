@@ -17,6 +17,8 @@ var GET_COMMENT = exports.GET_COMMENT = '/news/commentList';
 var ADD_COMMENT = exports.ADD_COMMENT = '/news/addComment';
 var DEL_COMMENT = exports.DEL_COMMENT = '/news/deleteComment';
 
+var GET_USERINFO = exports.GET_USERINFO = '/user/u';
+
 // 全局api地址
 // export const APIURL = 'https://data.huarenhouse.com';
 var APIURL = exports.APIURL = 'https://api.huarenshenghuo.com';

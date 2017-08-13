@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Router from 'next/router';
 
 import { withReduxSaga } from '../store';
+import { userLogin } from '../store/effects/user.js';
 
 class Sign extends Component {
   componentDidMount() {
-    Router.push({
-      pathname: '/',
+    userLogin({
+      payload: this.props.url.query,
     });
   }
   render() {
@@ -22,7 +22,7 @@ Sign.getInitialProps = async ({ store, query }) => {
   const { token } = query;
   if (token) {
     store.dispatch({
-      type: 'user/save',
+      type: 'user/login',
       payload: {
         token,
       },

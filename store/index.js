@@ -22,3 +22,5 @@ export function configureStore(initialState = exampleInitialState) {
 export function withReduxSaga(BaseComponent) {
   return withRedux(configureStore)(nextReduxSaga(BaseComponent));
 }
+
+export default configureStore();
