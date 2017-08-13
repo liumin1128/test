@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-
 import { withReduxSaga } from '../store';
-import { userLogin } from '../store/effects/user.js';
 
 class Sign extends Component {
   componentDidMount() {
-    userLogin({
+    this.props.dispatch({
+      type: 'user/login',
       payload: this.props.url.query,
     });
   }

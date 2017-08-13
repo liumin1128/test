@@ -1,20 +1,20 @@
+import { takeLatest, put, call } from 'redux-saga/effects';
 import Router from 'next/router';
 import { GET_USERINFO } from '../../constants/api.js';
 import request from '../../utils/fetch.js';
-import store from '../../store';
 
-export async function userLogin({ payload }) {
+function* userLogin({ payload }) {
   try {
     if (payload.token) {
-      const data = await request(GET_USERINFO, payload);
-      await store.dispatch({
+      const data = yield call(request, GET_USERINFO, payload);
+      yield put({
         type: 'user/save',
         payload: {
           ...data.body,
           ...payload,
         },
       });
-      await Router.push({
+      yield Router.push({
         pathname: '/',
       });
     }
@@ -22,3 +22,7 @@ export async function userLogin({ payload }) {
     console.log(error);
   }
 }
+
+export default [
+  takeLatest('user/login', userLogin),
+];
