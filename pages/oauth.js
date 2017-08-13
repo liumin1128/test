@@ -17,7 +17,6 @@ class Sign extends Component {
   }
 }
 
-
 Sign.getInitialProps = async ({ store, query }) => {
   console.log(query);
   const { token } = query;
